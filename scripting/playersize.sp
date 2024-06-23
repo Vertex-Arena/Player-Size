@@ -12,7 +12,7 @@ public Plugin myinfo =
     name = "[IOS] PlayerSize",
     author = "inactivo",
     description = "Allows administrators to change their character size.",
-    version = "1.0",
+    version = "1.1",
     url = "http://dsc.gg/vertexar"
 };
 
@@ -25,6 +25,12 @@ public void OnPluginStart()
 
 public Action Command_PlayerSize(int client, int args)
 {
+    if (!client)
+    {
+        ReplyToCommand(client, "[SM] This command cannot be used from console.");
+        return Plugin_Handled;
+    }
+
     Menu menu = new Menu(Handle_PlayerSizeMenu);
     menu.SetTitle("%t", "PickYourSize");
 
@@ -67,6 +73,5 @@ public int Handle_PlayerSizeMenu(Menu menu, MenuAction action, int param1, int p
         ServerCommand("mp_player_model_scale %d %d", GetClientUserId(param1), scale);
         PrintToChat(param1, "[SM] \x04%t", "YourSizeChanged", size, scale);
     }
-    
     return 0;
 }
