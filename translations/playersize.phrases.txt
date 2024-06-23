@@ -1,0 +1,28 @@
+"Phrases"
+{
+    "PickYourSize"
+    {
+        "en" "Pick your size:"
+        "es" "Selecciona tu tamaño"
+    }
+
+    "Small"
+    {
+        "en" "Small"
+        "es" "Pequeño"
+    }
+
+    "Large"
+    {
+        "en" "Large"
+        "es" "Grande"
+    }
+
+    "YourSizeChanged"
+    {
+        "#format" "{1:s},{2:i}"
+
+        "en" "Your size has been changed to {1} ({2})."
+        "es" "Tu tamaño ha sido cambiado a {1} ({2})."
+    }
+}
